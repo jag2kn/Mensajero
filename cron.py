@@ -30,7 +30,7 @@ print("Procesando mensajes pendientes:")
 for m in Mensaje.objects.filter(fecha__lte=datetime.now(), enviado=False):
 	print "Enviando mensaje: ["+str(m)+"]"
 	# now define a message
-	msg = "Hi from Python"
+	msg = str(m)
 	# url encode it nicely and set your own client name – no links in source!
 	themsg = urlencode({'status':msg,'source':'mensajero'})
 	# and send the notice
